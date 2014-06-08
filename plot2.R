@@ -22,6 +22,7 @@ data$newDate<-paste(data$Date,data$Time)
 data$newDate<-strptime(data$newDate,format="%Y-%m-%d %H:%M:%S")
 #Opens a screen graphic device, makes an histogram with the data, copy the histogram on a png file and close the graphic devices
 quartz()
+par(bg="white")
 with(data,plot(newDate,Global_active_power,type="l", xlab="",ylab="Global Active Power (kilowatts)", main=""))
 dev.copy(png,filename="plot2.png",width=480,height=480)
 dev.off()

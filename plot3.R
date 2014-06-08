@@ -22,6 +22,7 @@ data$newDate<-paste(data$Date,data$Time)
 data$newDate<-strptime(data$newDate,format="%Y-%m-%d %H:%M:%S")
 #Opens a screen graphic device, makes an histogram with the data, copy the histogram on a png file and close the graphic devices
 quartz()
+par(bg="white")
 with(data,{
       plot(data$newDate,data$Sub_metering_1,type="l",ylab="Energy sub metering",xlab="",main="")
       #Add the two aditional lines to the plot in their respective colors

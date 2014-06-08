@@ -16,6 +16,7 @@ if(!file.exists("household_power_consumption.txt")){
 data<-read.csv2.sql("household_power_consumption.txt",sql="SELECT * FROM file WHERE Date = '1/2/2007' OR Date = '2/2/2007' ", eol="\n")
 #Opens a screen graphic device, makes an histogram with the data, copy the histogram on a png file and close the graphic devices
 quartz()
+par(bg="white")
 hist(data$Global_active_power, main ="Global Active Power",xlab="Global Active Power (kilowatts)", ylab="Frecuency",col="Red")
 dev.copy(png,filename="plot1.png",width=480,height=480)
 dev.off()

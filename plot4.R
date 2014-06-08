@@ -23,7 +23,7 @@ data$newDate<-strptime(data$newDate,format="%Y-%m-%d %H:%M:%S")
 #Opens a screen graphic device, makes an histogram with the data, copy the histogram on a png file and close the graphic devices
 quartz()
 #Changes the parameter of the plot, allowing to put together 4 plots
-par(mfrow=c(2,2))
+par(mfrow=c(2,2),bg="white")
 with(data,{
 plot(data$newDate,data$Global_active_power,type="l", xlab="",ylab="Global Active Power (kilowatts)", main="")
 plot(data$newDate,data$Voltage,type="l",xlab="datetime",ylab="Voltage")
